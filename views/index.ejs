@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <section class="row">
+        <section class="column">
+            <h2>Input API Data Here</h2>
+            <form action="/api" method="POST">
+                <input type="text" placeholder="name" name="name">
+                <input type="text" placeholder="speciesName" name="speciesName">
+                <textarea type="text" cols="40" rows="5" placeholder="features" name="features"></textarea>
+                <input type="text" placeholder="homeworld" name="homeworld">                
+                <input type="text" placeholder="image" name="image">
+                <textarea type="text" cols="40" rows="5" placeholder="interestingFact" name="interestingFact"></textarea>
+                <input type="text" placeholder="notableExamples" name="notableExamples">
+                <button type="submit">SUBMIT NEW</button>
+                <button type="button" id="updateButton">UPDATE EXISTING</button>
+            </form>
+        </section>
+        <section class="column">
+            <h2>Delete API Data Here</h2>
+            <input type="text" placeholder="name to delete" name="deleteInput" id="deleteInput">
+            <button id="deleteButton">DELETE</button>
+            <h2>Current Aliens</h2>
+            <ul class="aliens">
+                <% for(i=0;i < info.length; i++) {%>
+                    <li class="alien">
+                        <span><%= info[i] %></span>
+                    </li>
+                <% } %>
+            </ul>
+        </section>
+    </section>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
